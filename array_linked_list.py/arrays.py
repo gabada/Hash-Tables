@@ -61,9 +61,20 @@ def array_append(array, element):
 
 # Remove the first occurence of the given element from the array
 # Throw an error if the value is not found
-def array_remove():
-    # Your code here
-    pass
+def array_remove(array, element):
+    removed = False
+    for i in range(array.count):
+        if removed:
+            array.elements[i - 1] = array.elements[i]
+        elif array.elements[i] == element:
+            removed = True
+
+    if removed:
+        array.count -= 1
+        array.elements[array.count] = None
+    else:
+        print("Error, " + str(element) + " not found!")
+
 
 
 # Remove the element in a given position and return it
@@ -95,6 +106,9 @@ array_print(arr)
 # array_print(arr)
 array_insert(arr, "STRING1", 0)
 array_append(arr, "STRING4")
+array_remove(arr, "STRING1")
+array_remove(arr, "STRING10")
+print(arr.elements[3])
 # array_insert(arr, "STRING2", 1)
 # array_insert(arr, "STRING3", 2)
 array_print(arr)
