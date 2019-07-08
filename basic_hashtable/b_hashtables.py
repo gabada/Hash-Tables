@@ -35,7 +35,11 @@ def hash(string, max):
 # If you are overwriting a value with a different key, print a warning.
 # '''
 def hash_table_insert(hash_table, key, value):
-    pass
+    hash_key = hash(key, hash_table.capacity)
+    print(hash_table.storage[hash_key])
+    if hash_table.storage[hash_key]:
+        print('Overwriting.....')
+    hash_table.storage[hash_key] = Pair(hash_key, value)
 
 
 # '''
