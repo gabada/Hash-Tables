@@ -48,7 +48,11 @@ def hash_table_insert(hash_table, key, value):
 # If you try to remove a value that isn't there, print a warning.
 # '''
 def hash_table_remove(hash_table, key):
-    pass
+    hash_key = hash(key, hash_table.capacity)
+    if hash_table.storage[hash_key]:
+        hash_table.storage[hash_key] = None
+    else:
+        print('Nothing to remove')
 
 
 # '''
