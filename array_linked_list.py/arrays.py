@@ -50,13 +50,13 @@ def array_insert(array, element, index):
 
 
 # Add an element to the end of the given array
-def array_append():
+def array_append(array, element):
 
     # Hint, this can be done with one line of code
     # (Without using a built in function)
 
     # Your code here
-    pass
+    array_insert(array, element, array.count)
 
 
 # Remove the first occurence of the given element from the array
@@ -94,7 +94,7 @@ array_print(arr)
 # array_pop(arr, 0)
 # array_print(arr)
 array_insert(arr, "STRING1", 0)
-# array_append(arr, "STRING4")
+array_append(arr, "STRING4")
 # array_insert(arr, "STRING2", 1)
 # array_insert(arr, "STRING3", 2)
 array_print(arr)
