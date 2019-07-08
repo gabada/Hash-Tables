@@ -61,7 +61,11 @@ def hash_table_remove(hash_table, key):
 # Should return None if the key is not found.
 # '''
 def hash_table_retrieve(hash_table, key):
-    pass
+    hash_key = hash(key, hash_table.capacity)
+    if hash_table.storage[hash_key]:
+        return hash_table.storage[hash_key].value
+    else:
+        return None
 
 
 def Testing():
